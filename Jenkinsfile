@@ -29,7 +29,7 @@ pipeline {
 		}
 		stage ("creating docker conatianers on master") {
 			steps {
-				sh "sudo docker run -itdp 81:80 --name tomcat:1.0 tomcat"
+				sh "sudo docker run -itdp 81:80 --name tomcat-1 tomcat"
 			}
 		}
 	}

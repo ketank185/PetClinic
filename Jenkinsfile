@@ -4,6 +4,10 @@ pipeline {
 			label "built-in"
 		}
 	}
+        tools {
+                jdk "java-8"
+                maven "maven-3.9"
+        }
 	stages {
 		stage ("clean workspace") {
 			steps {

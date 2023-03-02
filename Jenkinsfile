@@ -4,10 +4,6 @@ pipeline {
 			label "built-in"
 		}
 	}
-        tools {
-                jdk "java-8"
-                maven "maven-3.9"
-        }
 	stages {
 		stage ("clean workspace") {
 			steps {
@@ -24,7 +20,11 @@ pipeline {
 				sh ''' 
 					mvn clean
 					mvn package
-                                    '''
+			}
+		}
+		stage ("creating docker conatianers on master") {
+			steps {
+				sh "docker run -itdp 81:80 --name tomcat:1.0 tomcat"
 			}
 		}
 	}

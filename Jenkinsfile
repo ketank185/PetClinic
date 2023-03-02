@@ -20,6 +20,7 @@ pipeline {
 				sh ''' 
 					mvn clean
 					mvn package
+                                    '''
 			}
 		}
 		stage ("creating docker conatianers on master") {
